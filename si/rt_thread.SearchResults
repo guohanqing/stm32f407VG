@@ -1,0 +1,40 @@
+---- baud_rate Matches (11 in 10 files) ----
+Auth.c (components\net\lwip-1.4.1\src\netif\ppp):    slprintf(strspeed, sizeof(strspeed), "%d", baud_rate);
+Auth.c (components\net\lwip\src\netif\ppp):    slprintf(strspeed, sizeof(strspeed), "%d", baud_rate);
+Can.h (components\drivers\include\drivers):    rt_uint32_t baud_rate;
+Cdc_vcom.c (components\drivers\usb\usbdevice\class):    config.baud_rate = BAUD_RATE_115200;
+Drv_usart.c (bsp\stm32f407vgt6\drivers):    uart->UartHandle.Init.BaudRate   = cfg->baud_rate;
+Ipv6cp.c (components\net\lwip-head\src\netif\ppp):    sprintf(strspeed, "%d", baud_rate);
+Portserial.c (components\net\freemodbus\port):    serial->config.baud_rate = ulBaudRate;
+Portserial_m.c (components\net\freemodbus\port):    serial->config.baud_rate = ulBaudRate;
+Readme-zh.txt (components\drivers\can):		rt_uint32_t baud_rate;
+Readme-zh.txt (components\drivers\can):	baud_rate :
+Serial.h (components\drivers\include\drivers):    rt_uint32_t baud_rate;
+---- BaudRate Matches (27 in 11 files) ----
+Drv_usart.c (bsp\stm32f407vgt6\drivers):    uart->UartHandle.Init.BaudRate   = cfg->baud_rate;
+Stm32f4xx_hal_irda.c (bsp\stm32f407vgt6\libraries\stm32f4xx_hal_driver\src):        (++) BaudRate
+Stm32f4xx_hal_irda.c (bsp\stm32f407vgt6\libraries\stm32f4xx_hal_driver\src):  assert_param(IS_IRDA_BAUDRATE(hirda->Init.BaudRate));  
+Stm32f4xx_hal_irda.c (bsp\stm32f407vgt6\libraries\stm32f4xx_hal_driver\src):    hirda->Instance->BRR = IRDA_BRR(HAL_RCC_GetPCLK2Freq(), hirda->Init.BaudRate);
+Stm32f4xx_hal_irda.c (bsp\stm32f407vgt6\libraries\stm32f4xx_hal_driver\src):    hirda->Instance->BRR = IRDA_BRR(HAL_RCC_GetPCLK1Freq(), hirda->Init.BaudRate);
+Stm32f4xx_hal_irda.h (bsp\stm32f407vgt6\libraries\stm32f4xx_hal_driver\inc):  uint32_t BaudRate;                  /*!< This member configures the IRDA communication baud rate.
+Stm32f4xx_hal_irda.h (bsp\stm32f407vgt6\libraries\stm32f4xx_hal_driver\inc):                                           - IntegerDivider = ((PCLKx) / (8 * (hirda->Init.BaudRate)))
+Stm32f4xx_hal_smartcard.c (bsp\stm32f407vgt6\libraries\stm32f4xx_hal_driver\src):        (++) BaudRate = 12096 baud
+Stm32f4xx_hal_smartcard.c (bsp\stm32f407vgt6\libraries\stm32f4xx_hal_driver\src):  assert_param(IS_SMARTCARD_BAUDRATE(hsc->Init.BaudRate));  
+Stm32f4xx_hal_smartcard.c (bsp\stm32f407vgt6\libraries\stm32f4xx_hal_driver\src):    hsc->Instance->BRR = SMARTCARD_BRR(HAL_RCC_GetPCLK2Freq(), hsc->Init.BaudRate);
+Stm32f4xx_hal_smartcard.c (bsp\stm32f407vgt6\libraries\stm32f4xx_hal_driver\src):    hsc->Instance->BRR = SMARTCARD_BRR(HAL_RCC_GetPCLK1Freq(), hsc->Init.BaudRate);
+Stm32f4xx_hal_smartcard.h (bsp\stm32f407vgt6\libraries\stm32f4xx_hal_driver\inc):  uint32_t BaudRate;                  /*!< This member configures the SmartCard communication baud rate.
+Stm32f4xx_hal_smartcard.h (bsp\stm32f407vgt6\libraries\stm32f4xx_hal_driver\inc):                                           - IntegerDivider = ((PCLKx) / (8 * (hirda->Init.BaudRate)))
+Stm32f4xx_hal_spi.c (bsp\stm32f407vgt6\libraries\stm32f4xx_hal_driver\src):        (++) BaudRate Prescaler
+Stm32f4xx_hal_spi.h (bsp\stm32f407vgt6\libraries\stm32f4xx_hal_driver\inc):/** @defgroup SPI_BaudRate_Prescaler SPI BaudRate Prescaler
+Stm32f4xx_hal_uart.c (bsp\stm32f407vgt6\libraries\stm32f4xx_hal_driver\src):  assert_param(IS_UART_BAUDRATE(huart->Init.BaudRate));  
+Stm32f4xx_hal_uart.c (bsp\stm32f407vgt6\libraries\stm32f4xx_hal_driver\src):      huart->Instance->BRR = UART_BRR_SAMPLING8(HAL_RCC_GetPCLK2Freq(), huart->Init.BaudRate);
+Stm32f4xx_hal_uart.c (bsp\stm32f407vgt6\libraries\stm32f4xx_hal_driver\src):      huart->Instance->BRR = UART_BRR_SAMPLING8(HAL_RCC_GetPCLK1Freq(), huart->Init.BaudRate);
+Stm32f4xx_hal_uart.c (bsp\stm32f407vgt6\libraries\stm32f4xx_hal_driver\src):      huart->Instance->BRR = UART_BRR_SAMPLING16(HAL_RCC_GetPCLK2Freq(), huart->Init.BaudRate);
+Stm32f4xx_hal_uart.c (bsp\stm32f407vgt6\libraries\stm32f4xx_hal_driver\src):      huart->Instance->BRR = UART_BRR_SAMPLING16(HAL_RCC_GetPCLK1Freq(), huart->Init.BaudRate);
+Stm32f4xx_hal_uart.h (bsp\stm32f407vgt6\libraries\stm32f4xx_hal_driver\inc):  uint32_t BaudRate;                  /*!< This member configures the UART communication baud rate.
+Stm32f4xx_hal_uart.h (bsp\stm32f407vgt6\libraries\stm32f4xx_hal_driver\inc):                                           - IntegerDivider = ((PCLKx) / (8 * (OVR8+1) * (huart->Init.BaudRate)))
+Stm32f4xx_hal_usart.c (bsp\stm32f407vgt6\libraries\stm32f4xx_hal_driver\src):  assert_param(IS_USART_BAUDRATE(husart->Init.BaudRate));  
+Stm32f4xx_hal_usart.c (bsp\stm32f407vgt6\libraries\stm32f4xx_hal_driver\src):    husart->Instance->BRR = USART_BRR(HAL_RCC_GetPCLK2Freq(), husart->Init.BaudRate);
+Stm32f4xx_hal_usart.c (bsp\stm32f407vgt6\libraries\stm32f4xx_hal_driver\src):    husart->Instance->BRR = USART_BRR(HAL_RCC_GetPCLK1Freq(), husart->Init.BaudRate);
+Stm32f4xx_hal_usart.h (bsp\stm32f407vgt6\libraries\stm32f4xx_hal_driver\inc):  uint32_t BaudRate;                  /*!< This member configures the Usart communication baud rate.
+Stm32f4xx_hal_usart.h (bsp\stm32f407vgt6\libraries\stm32f4xx_hal_driver\inc):                                           - IntegerDivider = ((PCLKx) / (8 * (husart->Init.BaudRate)))
