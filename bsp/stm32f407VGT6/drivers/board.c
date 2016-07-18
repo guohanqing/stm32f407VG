@@ -15,6 +15,10 @@
 #include <rtthread.h>
 #include "board.h"
 #include "drv_usart.h"
+
+#ifdef RT_USING_LCD
+	#include "drv_lcd_st7735.h"
+#endif
 /**
  * @addtogroup STM32
  */
@@ -182,6 +186,9 @@ void rt_hw_board_init()
     hw_usart_init();
 #ifdef RT_USING_HEAP
     rt_system_heap_init((void *)HEAP_BEGIN, (void *)HEAP_END);
+#endif
+#ifdef RT_USING_LCD
+		hw_lcd_init();
 #endif
 
 #ifdef RT_USING_COMPONENTS_INIT

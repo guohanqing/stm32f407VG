@@ -6,9 +6,13 @@ cwd = os.path.join(str(Dir('#')), 'drivers')
 
 # add the general drivers.
 src	= Glob('*.c')
-
+#lcd_st7735_src = Split('''
+#drv_lcd_st7735.c
+#TFT_lcd.c
+#''')
 CPPPATH = [cwd]
-
+#if GetDepend('RT_USING_LCD'):
+	#src = src + lcd_st7735_src
 group = DefineGroup('Drivers', src, depend = [''], CPPPATH = CPPPATH)
 
 Return('group')

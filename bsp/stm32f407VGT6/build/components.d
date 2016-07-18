@@ -36,5 +36,13 @@
 .\build\components.o: Libraries\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ramfunc.h
 .\build\components.o: Libraries\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr.h
 .\build\components.o: Libraries\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h
+.\build\components.o: Libraries\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_spi.h
 .\build\components.o: Libraries\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h
 .\build\components.o: Libraries\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_usart.h
+.\build\components.o: ..\..\components\emWin\inc\GUI.h
+.\build\components.o: ..\..\components\emWin\inc\GUI_ConfDefaults.h
+.\build\components.o: ..\..\components\emWin\Config\GUIConf.h
+.\build\components.o: ..\..\components\emWin\inc\GUI_Type.h
+.\build\components.o: ..\..\components\emWin\inc\LCD.h
+.\build\components.o: ..\..\components\emWin\inc\Global.h
+.\build\components.o: ..\..\components\emWin\inc\GUI_Version.h

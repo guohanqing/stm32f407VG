@@ -28,6 +28,7 @@
 .\build\drv_usart.o: Libraries\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ramfunc.h
 .\build\drv_usart.o: Libraries\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr.h
 .\build\drv_usart.o: Libraries\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h
+.\build\drv_usart.o: Libraries\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_spi.h
 .\build\drv_usart.o: Libraries\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h
 .\build\drv_usart.o: Libraries\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_usart.h
 .\build\drv_usart.o: ..\..\components\drivers\include\rtdevice.h

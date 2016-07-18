@@ -32,7 +32,11 @@
 /* SECTION: IPC */
 /* Using Semaphore*/
 #define RT_USING_SEMAPHORE
-
+/*Using STemwin GUI */
+#define RT_USING_EMWIN
+#define RT_USING_EMWIN_DEMO
+/*using lcd*/
+#define RT_USING_LCD
 /* Using Mutex */
 #define RT_USING_MUTEX
 

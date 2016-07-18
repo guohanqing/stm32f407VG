@@ -33,6 +33,7 @@
 #include <rthw.h>
 #include <rtthread.h>
 #include "board.h"
+#include "GUI.h"
 
 #ifdef RT_USING_FINSH
 extern void finsh_system_init(void);
@@ -189,7 +190,9 @@ void main_thread_entry(void *parameter)
 
     /* RT-Thread components initialization */
     rt_components_init();
-
+#if defined(RT_USING_EMWIN) || defined(RT_USING_EMWIN_DEMO)
+    GUI_Init(); 
+#endif	
     /* invoke system main function */
 #if defined (__CC_ARM)
     $Super$$main(); /* for ARMCC. */
