@@ -32,13 +32,7 @@
 
 #include <rthw.h>
 #include <rtthread.h>
-#include "board.h"
-#include "GUI.h"
 
-#ifdef RT_USING_FINSH
-extern void finsh_system_init(void);
-extern void finsh_set_device(const char* device);
-#endif
 #ifdef RT_USING_COMPONENTS_INIT
 /*
  * Components Initialization will initialize some driver and components as following 
@@ -63,6 +57,8 @@ extern void finsh_set_device(const char* device);
  * INIT_APP_EXPORT(fn);
  * etc. 
  */
+extern void hw_lcd_init(void);
+ 
 static int rti_start(void)
 {
     return 0;
@@ -190,9 +186,7 @@ void main_thread_entry(void *parameter)
 
     /* RT-Thread components initialization */
     rt_components_init();
-#if defined(RT_USING_EMWIN) || defined(RT_USING_EMWIN_DEMO)
-    GUI_Init(); 
-#endif	
+
     /* invoke system main function */
 #if defined (__CC_ARM)
     $Super$$main(); /* for ARMCC. */
@@ -207,14 +201,14 @@ void rt_application_init(void)
 
 #ifdef RT_USING_HEAP
     tid = rt_thread_create("main", main_thread_entry, RT_NULL,
-                           2048, RT_THREAD_PRIORITY_MAX / 4, 20);
+                           2048, RT_THREAD_PRIORITY_MAX / 3, 20);
     RT_ASSERT(tid != RT_NULL);
 #else
     rt_err_t result;
 
     tid = &main_thread;
     result = rt_thread_init(tid, "main", main_thread_entry, RT_NULL,
-                            main_stack,2048, RT_THREAD_PRIORITY_MAX / 4, 20);
+                            2048, RT_THREAD_PRIORITY_MAX / 3, 20);
     RT_ASSERT(result != RT_EOK);
 #endif
 
@@ -247,7 +241,9 @@ int rtthread_startup(void)
 
     /* idle thread initialization */
     rt_thread_idle_init();
-
+    #ifdef RT_USING_LCD
+			hw_lcd_init();
+		#endif
     /* start scheduler */
     rt_system_scheduler_start();
 

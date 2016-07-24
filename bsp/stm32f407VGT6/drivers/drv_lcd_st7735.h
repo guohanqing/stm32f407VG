@@ -203,7 +203,7 @@ void     LCD_Delay(uint32_t delay);
 void 		 LCD_Reset(void);
 void 		 LCD_BL_light_On(void);
 void 		 LCD_BL_light_Off(void);
-int 		 hw_lcd_init(void);
+void 		 hw_lcd_init(void);
 /**
   * @}
   */

@@ -21,6 +21,7 @@ LCD_DrvTypeDef   st7735_drv =
 };
 
 static uint16_t ArrayRGB[320] = {0};
+static struct rt_device _lcd_device;
 
 /**
 * @}
@@ -418,8 +419,6 @@ struct rt_device_graphic_ops lcd_st7735_ops =
     rt_hw_lcd_draw_vline,
     //rt_hw_lcd_draw_blit_dot
 };
-
-struct rt_device _lcd_device;
 static rt_err_t lcd_init(rt_device_t dev)
 {
     return RT_EOK;
@@ -475,7 +474,7 @@ static void lcd_unlock(struct spi_lcd_device * lcd_device)
     rt_mutex_release(&lcd_device->lock);
 }*/
 
-int hw_lcd_init(void)
+void hw_lcd_init(void)
 {
 
 	/* register lcd device */
@@ -491,12 +490,13 @@ int hw_lcd_init(void)
 		
     st7735_Init();
 		/* init lcd */
-    
+    Lcd_Clear(RED);
 		
 
     /* register graphic device driver */
     rt_device_register(&_lcd_device, "lcd",
                        RT_DEVICE_FLAG_RDWR | RT_DEVICE_FLAG_STANDALONE);
 		
-		return RT_EOK;
+		//return RT_EOK;
 }
+//INIT_BOARD_EXPORT(hw_lcd_init);

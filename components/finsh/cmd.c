@@ -543,11 +543,11 @@ int list_mod_detail(const char *name)
                 rt_kprintf("------------- ---- ------- ---------- ---------- ---------- ---------- ---\n");
                 thread = module->module_thread;
                 rt_kprintf("%-8.*s 0x%02x", RT_NAME_MAX, thread->name, thread->current_priority);
-                
+
                 if (thread->stat == RT_THREAD_READY)        rt_kprintf(" ready  ");
                 else if (thread->stat == RT_THREAD_SUSPEND) rt_kprintf(" suspend");
                 else if (thread->stat == RT_THREAD_INIT)    rt_kprintf(" init   ");
-								
+
                 ptr = (rt_uint8_t *)thread->stack_addr;
                 while (*ptr == '#')ptr ++;
 

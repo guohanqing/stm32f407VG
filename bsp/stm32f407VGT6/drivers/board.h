@@ -58,4 +58,5 @@ extern int __bss_end;
 
 #endif
 extern void rt_hw_board_init(void);
-// <<< Use Configuration Wizard in Context Menu >>>
+/*<<< Use Configuration Wizard in Context Menu >>>*/
+

@@ -133,7 +133,7 @@ void SysTick_Handler(void)
     rt_interrupt_enter();
     /* tick for HAL Library */
     HAL_IncTick();
-
+		//HAL_SYSTICK_IRQHandler();
     rt_tick_increase();
 
     /* leave interrupt */
@@ -153,7 +153,7 @@ HAL_StatusTypeDef HAL_InitTick(uint32_t TickPriority)
     return HAL_OK;
 }
 
-void HAL_Delay(__IO uint32_t Delay)
+void RT_HAL_Delay(__IO uint32_t Delay)
 {
     rt_thread_delay(Delay);
 }
@@ -187,10 +187,6 @@ void rt_hw_board_init()
 #ifdef RT_USING_HEAP
     rt_system_heap_init((void *)HEAP_BEGIN, (void *)HEAP_END);
 #endif
-#ifdef RT_USING_LCD
-		hw_lcd_init();
-#endif
-
 #ifdef RT_USING_COMPONENTS_INIT
     rt_components_board_init();
 #endif

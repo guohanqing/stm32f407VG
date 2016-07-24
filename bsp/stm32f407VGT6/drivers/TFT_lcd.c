@@ -1,5 +1,5 @@
 #include "tft_lcd.h"
-
+#include "board.h"
 void              LCD_IO_Init(void);
 void              LCD_IO_WriteData(uint8_t Data);
 void              LCD_IO_WriteMultipleData(uint8_t *pData, uint32_t Size);
@@ -7,7 +7,7 @@ void              LCD_IO_WriteReg(uint8_t LCDReg);
 void              LCD_Delay(uint32_t delay);
 static void 			SPIx_Init(void);
 static void 			SPIx_Error (void);
-
+extern void RT_HAL_Delay(__IO uint32_t Delay);
 
 
 #ifdef HAL_SPI_MODULE_ENABLED
@@ -279,7 +279,8 @@ void LCD_IO_WriteMultipleData(uint8_t *pData, uint32_t Size)
   */
 void LCD_Delay(uint32_t Delay)
 {
-  HAL_Delay(Delay);
+ //HAL_Delay(Delay);
+	//RT_HAL_Delay(Delay);
 }
 
 void LCD_Reset(void)

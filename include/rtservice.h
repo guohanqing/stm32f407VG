@@ -62,7 +62,7 @@ rt_inline void rt_list_init(rt_list_t *l)
 rt_inline void rt_list_insert_after(rt_list_t *l, rt_list_t *n)
 {
     l->next->prev = n;
-    n->next = l->next; 
+    n->next = l->next;
 
     l->next = n;
     n->prev = l;

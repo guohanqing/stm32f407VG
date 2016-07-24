@@ -9,13 +9,15 @@ src = Split("""
 Config/GUIConf.c
 Config/GUIDRV_Template.c
 Config/LCDConf_Lin_Template.c
+emWinTask/MainTask.c
+emWinDemo/GUIDEMO.c
 OS/GUI_X_OS.c
 Lib/STemWin522_CM4_OS_Keil.lib
 """)
 #Lib/STemWin528_CM4_OS_Keil_ot.lib
 #CPPPATH = [cwd + '/inc']
 # The set of source files associated with this SConscript file.
-path = [RTT_ROOT + '/components/emWin', RTT_ROOT + '/components/emWin/inc',RTT_ROOT + '/components/emWin/Config']
+path = [RTT_ROOT + '/components/emWin',RTT_ROOT + '/components/emWin/emWinDemo', RTT_ROOT + '/components/emWin/inc',RTT_ROOT + '/components/emWin/Config']
 
 CPPDEFINES = []
 

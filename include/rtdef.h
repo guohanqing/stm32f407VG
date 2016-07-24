@@ -286,7 +286,7 @@ typedef int (*init_fn_t)(void);
  * @def RT_NULL
  * Similar as the \c NULL in C library.
  */
-#define RT_NULL                         (void*)(0)
+#define RT_NULL                         (0)
 
 struct rt_list_node
 {

@@ -30,3 +30,4 @@
 .\build\tft_lcd.o: Libraries\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_spi.h
 .\build\tft_lcd.o: Libraries\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h
 .\build\tft_lcd.o: Libraries\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_usart.h
+.\build\tft_lcd.o: drivers\board.h

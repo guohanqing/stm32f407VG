@@ -11,7 +11,7 @@ if os.getenv('RTT_CC'):
 	CROSS_TOOL = os.getenv('RTT_CC')
 
 #device options
-PART_TYPE = 'STM32F407xx'
+PART_TYPE = 'STM32F407XX'
 
 # cross_tool provides the cross compiler
 # EXEC_PATH is the compiler execute path, for example, CodeSourcery, Keil MDK, IAR
@@ -68,7 +68,7 @@ elif PLATFORM == 'armcc':
     TARGET_EXT = 'axf'
 
     DEVICE = ' --cpu=cortex-m4.fp'
-    #CFLAGS = DEVICE + ' --apcs=interwork -DUSE_STDPERIPH_DRIVER -DSTM32F40_41xxx'
+    #CFLAGS = DEVICE + ' --apcs=interwork -DUSE_HAL_DRIVER -DSTM32F40_41xxx'
 
     CFLAGS = DEVICE + ' --apcs=interwork -DUSE_HAL_DRIVER -DSTM32F407xx'
     AFLAGS = DEVICE

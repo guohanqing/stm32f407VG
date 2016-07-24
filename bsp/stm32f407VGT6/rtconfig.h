@@ -32,11 +32,7 @@
 /* SECTION: IPC */
 /* Using Semaphore*/
 #define RT_USING_SEMAPHORE
-/*Using STemwin GUI */
-#define RT_USING_EMWIN
-#define RT_USING_EMWIN_DEMO
-/*using lcd*/
-#define RT_USING_LCD
+
 /* Using Mutex */
 #define RT_USING_MUTEX
 
@@ -67,9 +63,15 @@
 #define RT_USING_SERIAL
 
 #define RT_USING_UART1
-#define RT_USING_UART2
-#define RT_USING_UART6
+//#define RT_USING_UART2
+//#define RT_USING_UART6
 //#define RT_USING_UART3
+
+/*Using STemwin GUI */
+//#define RT_USING_EMWIN
+//#define RT_USING_EMWIN_DEMO
+/*using lcd*/
+#define RT_USING_LCD
 
 /* Using GPIO pin framework */
 //#define RT_USING_PIN
