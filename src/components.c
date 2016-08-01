@@ -32,7 +32,7 @@
 
 #include <rthw.h>
 #include <rtthread.h>
-
+#include "GUI.h"
 #ifdef RT_USING_COMPONENTS_INIT
 /*
  * Components Initialization will initialize some driver and components as following 
@@ -184,8 +184,10 @@ void main_thread_entry(void *parameter)
     extern int main(void);
     extern int $Super$$main(void);
 
+    // GUI_Init();
     /* RT-Thread components initialization */
     rt_components_init();
+	
 
     /* invoke system main function */
 #if defined (__CC_ARM)
@@ -193,6 +195,15 @@ void main_thread_entry(void *parameter)
 #elif defined(__ICCARM__) || defined(__GNUC__)
     main();
 #endif
+	#if 0
+	  GUI_Init();            /* ≥ı ºªØST-emwin */ 
+		while (1)
+    {
+			  rt_kprintf("thread1\r\n");
+			  MainTask();
+
+    }
+		#endif
 }
 
 void rt_application_init(void)
@@ -242,7 +253,11 @@ int rtthread_startup(void)
     /* idle thread initialization */
     rt_thread_idle_init();
     #ifdef RT_USING_LCD
-			hw_lcd_init();
+			//hw_lcd_init();
+			//st7735_Init();
+		#endif
+		#ifdef RT_USING_EMWIN
+			//GUI_Init();
 		#endif
     /* start scheduler */
     rt_system_scheduler_start();

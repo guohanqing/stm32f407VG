@@ -204,6 +204,7 @@ void 		 LCD_Reset(void);
 void 		 LCD_BL_light_On(void);
 void 		 LCD_BL_light_Off(void);
 void 		 hw_lcd_init(void);
+int emwin_system_init(void);
 /**
   * @}
   */

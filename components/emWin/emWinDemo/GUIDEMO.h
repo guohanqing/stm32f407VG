@@ -1,28 +1,27 @@
 /*********************************************************************
-*          Portions COPYRIGHT 2013 STMicroelectronics                *
-*          Portions SEGGER Microcontroller GmbH & Co. KG             *
+*                SEGGER Microcontroller GmbH & Co. KG                *
 *        Solutions for real time microcontroller applications        *
 **********************************************************************
 *                                                                    *
-*        (c) 1996 - 2013  SEGGER Microcontroller GmbH & Co. KG       *
+*        (c) 1996 - 2012  SEGGER Microcontroller GmbH & Co. KG       *
 *                                                                    *
 *        Internet: www.segger.com    Support:  support@segger.com    *
 *                                                                    *
 **********************************************************************
 
-** emWin V5.20 - Graphical user interface for embedded applications **
+** emWin V5.16 - Graphical user interface for embedded applications **
 All  Intellectual Property rights  in the Software belongs to  SEGGER.
 emWin is protected by  international copyright laws.  Knowledge of the
 source code may not be used to write a similar product.  This file may
 only be used in accordance with the following terms:
 
-The  software has  been licensed  to STMicroelectronics International
-N.V. a Dutch company with a Swiss branch and its headquarters in Plan-
-les-Ouates, Geneva, 39 Chemin du Champ des Filles, Switzerland for the
-purposes of creating libraries for ARM Cortex-M-based 32-bit microcon_
-troller products commercialized by Licensee only, sublicensed and dis_
-tributed under the terms and conditions of the End User License Agree_
-ment supplied by STMicroelectronics International N.V.
+The software has been licensed to  ARM LIMITED whose registered office
+is situated at  110 Fulbourn Road,  Cambridge CB1 9NJ,  England solely
+for  the  purposes  of  creating  libraries  for  ARM7, ARM9, Cortex-M
+series,  and   Cortex-R4   processor-based  devices,  sublicensed  and
+distributed as part of the  MDK-ARM  Professional  under the terms and
+conditions  of  the   End  User  License  supplied  with  the  MDK-ARM
+Professional. 
 Full source code is available at: www.segger.com
 
 We appreciate your understanding and fairness.
@@ -31,32 +30,6 @@ File        : GUIDEMO.h
 Purpose     : Configuration file of GUIDemo
 ----------------------------------------------------------------------
 */
-
-/**
-  ******************************************************************************
-  * @file    GUIDEMO.c
-  * @author  MCD Application Team
-  * @version V1.0.0
-  * @date    22-July-2013
-  * @brief   Configuration file of GUIDemo
-  ******************************************************************************
-  * @attention
-  *
-  * Licensed under MCD-ST Liberty SW License Agreement V2, (the "License");
-  * You may not use this file except in compliance with the License.
-  * You may obtain a copy of the License at:
-  *
-  *        http://www.st.com/software_license_agreement_liberty_v2
-  *
-  * Unless required by applicable law or agreed to in writing, software 
-  * distributed under the License is distributed on an "AS IS" BASIS, 
-  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  * See the License for the specific language governing permissions and
-  * limitations under the License.
-  *
-  ******************************************************************************
-  */
-
 
 #ifndef GUIDEMO_H
 #define GUIDEMO_H
@@ -69,8 +42,6 @@ extern "C" {     /* Make sure we have C-declarations in C++ programs */
 
 #if GUI_WINSUPPORT
   #include "WM.h"
-
-  #include "CHECKBOX.h"
   #include "FRAMEWIN.h"
   #include "PROGBAR.h"
   #include "TEXT.h"
@@ -89,29 +60,27 @@ extern "C" {     /* Make sure we have C-declarations in C++ programs */
 *
 **********************************************************************
 */
-#define CONTROL_SIZE_X    80
-#define CONTROL_SIZE_Y    61
-#define INFO_SIZE_Y       65
-#define BUTTON_SIZE_X     32
-#define BUTTON_SIZE_Y     20
-#define PROGBAR_SIZE_X    66
-#define PROGBAR_SIZE_Y    12
-#define TEXT_SIZE_X       69
-#define TEXT_SIZE_Y       7
-#define SHOW_PROGBAR_AT   100
-#define GUI_ID_HALT       (GUI_ID_USER + 0)
-#define GUI_ID_NEXT       (GUI_ID_USER + 1)
+#define CONTROL_SIZE_X  80
+#define CONTROL_SIZE_Y  61
+#define INFO_SIZE_Y     65
+#define BUTTON_SIZE_X   32
+#define BUTTON_SIZE_Y   20
+#define PROGBAR_SIZE_X  66
+#define PROGBAR_SIZE_Y  12
+#define TEXT_SIZE_X     69
+#define TEXT_SIZE_Y     7
+#define SHOW_PROGBAR_AT 100
+#define GUI_ID_HALT     GUI_ID_USER + 0
+#define GUI_ID_NEXT     GUI_ID_USER + 1
 
-#define BK_COLOR_0        0xFF5555
-#define BK_COLOR_1        0x880000
+#define BK_COLOR_0      0xFF5555
+#define BK_COLOR_1      0x880000
 
-#define NUMBYTES_NEEDED   0x200000
+#define NUMBYTES_NEEDED 0x200000
 
-#define CIRCLE_RADIUS     100
+#define CIRCLE_RADIUS   100
 
-#define LOGO_DIST_BORDER  5
-
-#define CHAR_READING_TIME 80
+#define LOGO_DIST_BORDER 5
 
 /*********************************************************************
 *
@@ -119,77 +88,116 @@ extern "C" {     /* Make sure we have C-declarations in C++ programs */
 *
 **********************************************************************
 */
-
-#ifndef   SHOW_GUIDEMO_BITMAP
-  #define SHOW_GUIDEMO_BITMAP            (0)
+#if 1 // Show all demos
+#ifndef   SHOW_GUIDEMO_AUTOMOTIVE
+  #define SHOW_GUIDEMO_AUTOMOTIVE        (1)
 #endif
-
+#ifndef   SHOW_GUIDEMO_BARGRAPH
+  #define SHOW_GUIDEMO_BARGRAPH          (1)
+#endif
+#ifndef   SHOW_GUIDEMO_BITMAP
+  #define SHOW_GUIDEMO_BITMAP            (1)
+#endif
 #ifndef   SHOW_GUIDEMO_COLORBAR
   #define SHOW_GUIDEMO_COLORBAR          (1)
 #endif
-
 #ifndef   SHOW_GUIDEMO_CURSOR
-  #define SHOW_GUIDEMO_CURSOR            (0)
+  #define SHOW_GUIDEMO_CURSOR            (1)
 #endif
-
-#ifndef   SHOW_GUIDEMO_GRAPH
-  #define SHOW_GUIDEMO_GRAPH             (0)
-#endif
-
-#ifndef   SHOW_GUIDEMO_LISTVIEW
-  #define SHOW_GUIDEMO_LISTVIEW          (0)
-#endif
-
-#ifndef   SHOW_GUIDEMO_SPEED
-  #define SHOW_GUIDEMO_SPEED             (0)
-#endif
-
-#ifndef   SHOW_GUIDEMO_TREEVIEW
-  #define SHOW_GUIDEMO_TREEVIEW          (0)
-#endif
-
-#ifndef   SHOW_GUIDEMO_ICONVIEW
-  #define SHOW_GUIDEMO_ICONVIEW          (0)
-#endif
-
-#ifndef   SHOW_GUIDEMO_RADIALMENU
-  #define SHOW_GUIDEMO_RADIALMENU        (0)
-#endif
-
-#ifndef   SHOW_GUIDEMO_VSCREEN
-  #define SHOW_GUIDEMO_VSCREEN           (0)
-#endif
-
-#ifndef   SHOW_GUIDEMO_AUTOMOTIVE
-  #define SHOW_GUIDEMO_AUTOMOTIVE        (0)
-#endif
-
-#ifndef   SHOW_GUIDEMO_TRANSPARENTDIALOG
-  #define SHOW_GUIDEMO_TRANSPARENTDIALOG (0)
-#endif
-
-#ifndef   SHOW_GUIDEMO_AATEXT
-  #define SHOW_GUIDEMO_AATEXT            (0)
-#endif
-
-#ifndef   SHOW_GUIDEMO_BARGRAPH
-  #define SHOW_GUIDEMO_BARGRAPH          (0)
-#endif
-
 #ifndef   SHOW_GUIDEMO_FADING
   #define SHOW_GUIDEMO_FADING            (0)
 #endif
-
+#ifndef   SHOW_GUIDEMO_GRAPH
+  #define SHOW_GUIDEMO_GRAPH             (1)
+#endif
+#ifndef   SHOW_GUIDEMO_ICONVIEW
+  #define SHOW_GUIDEMO_ICONVIEW          (0)
+#endif
+#ifndef   SHOW_GUIDEMO_IMAGEFLOW
+  #define SHOW_GUIDEMO_IMAGEFLOW         (0)
+#endif
+#ifndef   SHOW_GUIDEMO_LISTVIEW
+  #define SHOW_GUIDEMO_LISTVIEW          (1)
+#endif
 #ifndef   SHOW_GUIDEMO_SKINNING
   #define SHOW_GUIDEMO_SKINNING          (0)
 #endif
-
+#ifndef   SHOW_GUIDEMO_SPEED
+  #define SHOW_GUIDEMO_SPEED             (1)
+#endif
 #ifndef   SHOW_GUIDEMO_SPEEDOMETER
   #define SHOW_GUIDEMO_SPEEDOMETER       (0)
 #endif
-
+#ifndef   SHOW_GUIDEMO_TRANSPARENTDIALOG
+  #define SHOW_GUIDEMO_TRANSPARENTDIALOG (1)
+#endif
+#ifndef   SHOW_GUIDEMO_TREEVIEW
+  #define SHOW_GUIDEMO_TREEVIEW          (1)
+#endif
+#ifndef   SHOW_GUIDEMO_VSCREEN
+  #define SHOW_GUIDEMO_VSCREEN           (0)
+#endif
+#ifndef   SHOW_GUIDEMO_WASHINGMACHINE
+  #define SHOW_GUIDEMO_WASHINGMACHINE    (1)
+#endif
+#ifndef   SHOW_GUIDEMO_ZOOMANDROTATE
+  #define SHOW_GUIDEMO_ZOOMANDROTATE     (0)
+#endif
+#else // Choose a demo
+#ifndef   SHOW_GUIDEMO_AUTOMOTIVE
+  #define SHOW_GUIDEMO_AUTOMOTIVE        (0)
+#endif
+#ifndef   SHOW_GUIDEMO_BARGRAPH
+  #define SHOW_GUIDEMO_BARGRAPH          (0)
+#endif
+#ifndef   SHOW_GUIDEMO_BITMAP
+  #define SHOW_GUIDEMO_BITMAP            (0)
+#endif
+#ifndef   SHOW_GUIDEMO_COLORBAR
+  #define SHOW_GUIDEMO_COLORBAR          (0)
+#endif
+#ifndef   SHOW_GUIDEMO_CURSOR
+  #define SHOW_GUIDEMO_CURSOR            (0)
+#endif
+#ifndef   SHOW_GUIDEMO_FADING
+  #define SHOW_GUIDEMO_FADING            (0)
+#endif
+#ifndef   SHOW_GUIDEMO_GRAPH
+  #define SHOW_GUIDEMO_GRAPH             (0)
+#endif
+#ifndef   SHOW_GUIDEMO_ICONVIEW
+  #define SHOW_GUIDEMO_ICONVIEW          (0)
+#endif
 #ifndef   SHOW_GUIDEMO_IMAGEFLOW
   #define SHOW_GUIDEMO_IMAGEFLOW         (0)
+#endif
+#ifndef   SHOW_GUIDEMO_LISTVIEW
+  #define SHOW_GUIDEMO_LISTVIEW          (0)
+#endif
+#ifndef   SHOW_GUIDEMO_SKINNING
+  #define SHOW_GUIDEMO_SKINNING          (0)
+#endif
+#ifndef   SHOW_GUIDEMO_SPEED
+  #define SHOW_GUIDEMO_SPEED             (0)
+#endif
+#ifndef   SHOW_GUIDEMO_SPEEDOMETER
+  #define SHOW_GUIDEMO_SPEEDOMETER       (0)
+#endif
+#ifndef   SHOW_GUIDEMO_TRANSPARENTDIALOG
+  #define SHOW_GUIDEMO_TRANSPARENTDIALOG (0)
+#endif
+#ifndef   SHOW_GUIDEMO_TREEVIEW
+  #define SHOW_GUIDEMO_TREEVIEW          (0)
+#endif
+#ifndef   SHOW_GUIDEMO_VSCREEN
+  #define SHOW_GUIDEMO_VSCREEN           (0)
+#endif
+#ifndef   SHOW_GUIDEMO_WASHINGMACHINE
+  #define SHOW_GUIDEMO_WASHINGMACHINE    (0)
+#endif
+#ifndef   SHOW_GUIDEMO_ZOOMANDROTATE
+  #define SHOW_GUIDEMO_ZOOMANDROTATE     (0)
+#endif
 #endif
 
 /*********************************************************************
@@ -243,7 +251,6 @@ int  GUIDEMO_GetTime          (void);
 void GUIDEMO_HideControlWin   (void);
 void GUIDEMO_HideInfoWin      (void);
 void GUIDEMO_NotifyStartNext  (void);
-void GUIDEMO_SetDrawLogo      (U8 OnOff);
 void GUIDEMO_ShowControlWin   (void);
 void GUIDEMO_ShowInfo         (const char * acInfo);
 void GUIDEMO_ShowInfoWin      (void);
@@ -258,7 +265,6 @@ void GUIDEMO_Main             (void);
 *
 **********************************************************************
 */
-void GUIDEMO_AntialiasedText  (void);
 void GUIDEMO_Automotive       (void);
 void GUIDEMO_BarGraph         (void);
 void GUIDEMO_Bitmap           (void);
@@ -270,7 +276,6 @@ void GUIDEMO_IconView         (void);
 void GUIDEMO_ImageFlow        (void);
 void GUIDEMO_Intro            (void);
 void GUIDEMO_Listview         (void);
-void GUIDEMO_RadialMenu       (void);
 void GUIDEMO_Skinning         (void);
 void GUIDEMO_Speed            (void);
 void GUIDEMO_Speedometer      (void);
@@ -286,17 +291,13 @@ void GUIDEMO_ZoomAndRotate    (void);
 *
 **********************************************************************
 */
-/*extern GUI_CONST_STORAGE GUI_BITMAP bmSTLogo;
 extern GUI_CONST_STORAGE GUI_BITMAP bmSeggerLogo;
 extern GUI_CONST_STORAGE GUI_BITMAP bmSeggerLogo70x35;
-extern GUI_CONST_STORAGE GUI_BITMAP bmSTLogo70x35;*/
 
 extern GUI_CONST_STORAGE GUI_FONT   GUI_FontRounded16;
 extern GUI_CONST_STORAGE GUI_FONT   GUI_FontRounded22;
 extern GUI_CONST_STORAGE GUI_FONT   GUI_FontSouvenir18;
 extern GUI_CONST_STORAGE GUI_FONT   GUI_FontD6x8;
-extern GUI_CONST_STORAGE GUI_FONT   GUI_FontAA2_32;
-extern GUI_CONST_STORAGE GUI_FONT   GUI_FontAA4_32;
 
 
 #if defined(__cplusplus)
@@ -304,5 +305,3 @@ extern GUI_CONST_STORAGE GUI_FONT   GUI_FontAA4_32;
 #endif
 
 #endif // avoid multiple inclusion
-
-/*************************** End of file ****************************/

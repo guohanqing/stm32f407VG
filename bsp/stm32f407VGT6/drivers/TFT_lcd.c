@@ -280,7 +280,7 @@ void LCD_IO_WriteMultipleData(uint8_t *pData, uint32_t Size)
 void LCD_Delay(uint32_t Delay)
 {
  //HAL_Delay(Delay);
-	//RT_HAL_Delay(Delay);
+	RT_HAL_Delay(Delay);
 }
 
 void LCD_Reset(void)

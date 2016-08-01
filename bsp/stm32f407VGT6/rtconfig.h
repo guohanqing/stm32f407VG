@@ -68,7 +68,7 @@
 //#define RT_USING_UART3
 
 /*Using STemwin GUI */
-//#define RT_USING_EMWIN
+#define RT_USING_EMWIN
 //#define RT_USING_EMWIN_DEMO
 /*using lcd*/
 #define RT_USING_LCD

@@ -1,0 +1,26 @@
+Import('RTT_ROOT')
+Import('rtconfig')
+from building import *
+
+#cwd= GetCurrentDir()
+
+# The set of source files associated with this SConscript file.
+src = Split("""
+Config/GUIConf.c
+Config/GUIDRV_Template.c
+Config/LCDConf_Lin_Template.c
+Config/GUI_init.c
+Lib/STemWin522_CM4_Keil.lib
+OS/GUI_X.c
+""")
+#Lib/STemWin528_CM4_OS_Keil_ot.lib
+#CPPPATH = [cwd + '/inc']
+# The set of source files associated with this SConscript file.
+path = [RTT_ROOT + '/components/STemwin',RTT_ROOT + '/components/STemwin/emWinTask',RTT_ROOT + '/components/STemwin/emWinDemo', RTT_ROOT + '/components/STemwin/inc',RTT_ROOT + '/components/STemwin/Config']
+
+CPPDEFINES = []
+
+
+group = DefineGroup('StemWin', src, depend = ['RT_USING_EMWIN'], CPPPATH = path, CPPDEFINES = CPPDEFINES)
+
+Return('group')

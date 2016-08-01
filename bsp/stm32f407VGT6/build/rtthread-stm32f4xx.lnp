@@ -112,6 +112,14 @@
 ".\build\finsh_var.o"
 ".\build\finsh_vm.o"
 ".\build\finsh_token.o"
+".\build\guiconf.o"
+".\build\guidrv_template.o"
+".\build\lcdconf_lin_template.o"
+".\build\gui_init.o"
+"..\..\components\Stemwin\Lib\STemWin522_CM4_Keil.lib"
+".\build\gui_x.o"
+".\build\guidemo.o"
+".\build\guidemo_start.o"
 --strict --scatter ".\stm32_rom.sct"
 --keep *.o(.rti_fn.*) --keep *.o(FSymTab) --keep *.o(VSymTab) --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

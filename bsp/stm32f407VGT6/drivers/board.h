@@ -27,7 +27,7 @@
 // <o> Console on USART: <0=> no console <1=>USART 1 <2=>USART 2 <3=> USART 3
 // 	<i>Default: 1
 #define STM32_CONSOLE_USART     1
-
+#define RT_USING_HSE
 
 
 #if STM32_CONSOLE_USART == 0

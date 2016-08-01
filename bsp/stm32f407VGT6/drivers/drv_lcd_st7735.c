@@ -21,7 +21,7 @@ LCD_DrvTypeDef   st7735_drv =
 };
 
 static uint16_t ArrayRGB[320] = {0};
-static struct rt_device _lcd_device;
+//static struct rt_device _lcd_device;
 
 /**
 * @}
@@ -33,7 +33,7 @@ void Lcd_Clear(uint16_t Color)
    st7735_SetDisplayWindow(0,0,128-1,160-1);
    LCD_IO_WriteReg(0x2C);
    for(i=0;i<128;i++)
-    for(m=0;m<160;m++)
+    for(m=0;m<80;m++)
     {	
 	  	LCD_IO_WriteData(Color>>8);
 			LCD_IO_WriteData(Color);
@@ -377,7 +377,7 @@ void st7735_DrawBitmap(uint16_t Xpos, uint16_t Ypos, uint8_t *pbmp)
   /* Memory access control: MY = 1, MX = 1, MV = 0, ML = 0 */
   st7735_WriteReg(LCD_REG_54, 0xC0);
 }
-
+#if 0
 /*  ÉèÖÃÏñËØµã ÑÕÉ«,X,Y */
 void rt_hw_lcd_set_pixel(const char *pixel, int x, int y)
 {
@@ -474,6 +474,7 @@ static void lcd_unlock(struct spi_lcd_device * lcd_device)
     rt_mutex_release(&lcd_device->lock);
 }*/
 
+
 void hw_lcd_init(void)
 {
 
@@ -488,9 +489,9 @@ void hw_lcd_init(void)
 
     _lcd_device.user_data = &lcd_st7735_ops;
 		
-    st7735_Init();
+    //st7735_Init();
 		/* init lcd */
-    Lcd_Clear(RED);
+    //Lcd_Clear(RED);
 		
 
     /* register graphic device driver */
@@ -500,3 +501,4 @@ void hw_lcd_init(void)
 		//return RT_EOK;
 }
 //INIT_BOARD_EXPORT(hw_lcd_init);
+#endif

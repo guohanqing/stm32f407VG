@@ -1,28 +1,27 @@
 /*********************************************************************
-*          Portions COPYRIGHT 2013 STMicroelectronics                *
-*          Portions SEGGER Microcontroller GmbH & Co. KG             *
+*                SEGGER Microcontroller GmbH & Co. KG                *
 *        Solutions for real time microcontroller applications        *
 **********************************************************************
 *                                                                    *
-*        (c) 1996 - 2013  SEGGER Microcontroller GmbH & Co. KG       *
+*        (c) 1996 - 2012  SEGGER Microcontroller GmbH & Co. KG       *
 *                                                                    *
 *        Internet: www.segger.com    Support:  support@segger.com    *
 *                                                                    *
 **********************************************************************
 
-** emWin V5.20 - Graphical user interface for embedded applications **
+** emWin V5.16 - Graphical user interface for embedded applications **
 All  Intellectual Property rights  in the Software belongs to  SEGGER.
 emWin is protected by  international copyright laws.  Knowledge of the
 source code may not be used to write a similar product.  This file may
 only be used in accordance with the following terms:
 
-The  software has  been licensed  to STMicroelectronics International
-N.V. a Dutch company with a Swiss branch and its headquarters in Plan-
-les-Ouates, Geneva, 39 Chemin du Champ des Filles, Switzerland for the
-purposes of creating libraries for ARM Cortex-M-based 32-bit microcon_
-troller products commercialized by Licensee only, sublicensed and dis_
-tributed under the terms and conditions of the End User License Agree_
-ment supplied by STMicroelectronics International N.V.
+The software has been licensed to  ARM LIMITED whose registered office
+is situated at  110 Fulbourn Road,  Cambridge CB1 9NJ,  England solely
+for  the  purposes  of  creating  libraries  for  ARM7, ARM9, Cortex-M
+series,  and   Cortex-R4   processor-based  devices,  sublicensed  and
+distributed as part of the  MDK-ARM  Professional  under the terms and
+conditions  of  the   End  User  License  supplied  with  the  MDK-ARM
+Professional. 
 Full source code is available at: www.segger.com
 
 We appreciate your understanding and fairness.
@@ -31,32 +30,6 @@ File        : GUIDEMO_Skinning.c
 Purpose     : Plays with some dialogs and uses skinning
 ---------------------------END-OF-HEADER------------------------------
 */
-
-/**
-  ******************************************************************************
-  * @file    GUIDEMO_Skinning.c
-  * @author  MCD Application Team
-  * @version V1.0.0
-  * @date    22-July-2013
-  * @brief   Plays with some dialogs and uses skinning
-  ******************************************************************************
-  * @attention
-  *
-  * Licensed under MCD-ST Liberty SW License Agreement V2, (the "License");
-  * You may not use this file except in compliance with the License.
-  * You may obtain a copy of the License at:
-  *
-  *        http://www.st.com/software_license_agreement_liberty_v2
-  *
-  * Unless required by applicable law or agreed to in writing, software 
-  * distributed under the License is distributed on an "AS IS" BASIS, 
-  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  * See the License for the specific language governing permissions and
-  * limitations under the License.
-  *
-  ******************************************************************************
-  */
-
 
 #include "GUIDEMO.h"
 
@@ -2099,7 +2072,7 @@ static void _cbBkWindow(WM_MESSAGE * pMsg) {
     GUI_SetTextMode(GUI_TM_TRANS);
     GUI_DrawGradientV(0, 0, xSize, ySize, 0xFF8080, 0x8080FF);
     GUI_SetFont(GUI_FONT_16_ASCII);
-    GUI_DispStringHCenterAt("STemWin now supports\n", 180, 5);
+    GUI_DispStringHCenterAt("emWin now supports\n", 180, 5);
     GUI_SetFont(&GUI_Font24_EXT_AA4);
     GUI_DispStringHCenterAt("S k i n n i n g", 180, GUI_GetDispPosY());
     GUI_DrawBitmap(&bmSeggerLogo_60x30, 20, 10);
@@ -2242,14 +2215,9 @@ static void _cbDialogOrder(WM_MESSAGE * pMsg) {
         while ((_ReadyDialogOrder == 0) && (GUIDEMO_CheckCancel() == 0)) {
           GUI_Delay(100);
           if (_ReadyDialogSelect == 1) {
-            //
-            // Make sure the dialog is not deleted.
-            //
-            if (WM_IsWindow(hWin)) {
-              _ReadyDialogSelect++;
-              hItem = WM_GetDialogItem(hWin, GUI_ID_EDIT0);
-              EDIT_SetText(hItem, _acVehicle);
-            }
+            _ReadyDialogSelect++;
+            hItem = WM_GetDialogItem(hWin, GUI_ID_EDIT0);
+            EDIT_SetText(hItem, _acVehicle);
           }
         }
         if (WM_IsWindow(hDlg)) {
@@ -2258,10 +2226,6 @@ static void _cbDialogOrder(WM_MESSAGE * pMsg) {
         break;
       case GUI_ID_OK:
         hProg = GUI_CreateDialogBox(_aDialogProgress, GUI_COUNTOF(_aDialogProgress), &_cbDialogProgress, WM_HBKWIN, 0, 0);
-        //
-        // Make modal to avoid several creations of the progress window.
-        //
-        WM_MakeModal(hProg);
         FRAMEWIN_SetSkin(hProg, _DrawSkin);
         GUI_MEMDEV_FadeInWindow(hProg, 500);
         WM_InvalidateWindow(hWin);
@@ -2270,9 +2234,6 @@ static void _cbDialogOrder(WM_MESSAGE * pMsg) {
         // No break here...
         //
       case GUI_ID_CANCEL:
-        //
-        // Make sure the dialog is not deleted.
-        //
         if (WM_IsWindow(hWin)) {
           GUI_MEMDEV_FadeOutWindow(hWin, 500);
           GUI_EndDialog(hWin, 0);
