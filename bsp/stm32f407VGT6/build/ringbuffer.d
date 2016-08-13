@@ -8,5 +8,7 @@
 .\build\ringbuffer.o: ..\..\include\rtm.h
 .\build\ringbuffer.o: ..\..\include\rtthread.h
 .\build\ringbuffer.o: ..\..\components\drivers\include\rtdevice.h
+.\build\ringbuffer.o: ..\..\components\drivers\include\drivers/spi.h
+.\build\ringbuffer.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 .\build\ringbuffer.o: ..\..\components\drivers\include\drivers/serial.h
 .\build\ringbuffer.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

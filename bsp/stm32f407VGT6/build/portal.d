@@ -8,4 +8,6 @@
 .\build\portal.o: ..\..\include\rtm.h
 .\build\portal.o: ..\..\include\rtthread.h
 .\build\portal.o: ..\..\components\drivers\include\rtdevice.h
+.\build\portal.o: ..\..\components\drivers\include\drivers/spi.h
+.\build\portal.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 .\build\portal.o: ..\..\components\drivers\include\drivers/serial.h

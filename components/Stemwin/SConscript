@@ -12,6 +12,8 @@ Config/LCDConf_Lin_Template.c
 Config/GUI_init.c
 Lib/STemWin522_CM4_Keil.lib
 OS/GUI_X.c
+emWinDemo/GUIDEMO.c
+emWinDemo/GUIDEMO_Start.c
 """)
 #Lib/STemWin528_CM4_OS_Keil_ot.lib
 #CPPPATH = [cwd + '/inc']

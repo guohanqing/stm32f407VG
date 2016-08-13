@@ -40,5 +40,7 @@
 .\build\drv_usart.o: ..\..\include\rtservice.h
 .\build\drv_usart.o: ..\..\include\rtm.h
 .\build\drv_usart.o: ..\..\include\rtthread.h
+.\build\drv_usart.o: ..\..\components\drivers\include\drivers/spi.h
+.\build\drv_usart.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 .\build\drv_usart.o: ..\..\components\drivers\include\drivers/serial.h
 .\build\drv_usart.o: ..\..\include\rthw.h

@@ -250,6 +250,7 @@ static void _FillRect(GUI_DEVICE * pDevice, int x0, int y0, int x1, int y1) {
 *       _DrawHLine
 */
 static void _DrawHLine(GUI_DEVICE * pDevice, int x0, int y, int x1) {
+
 	//LCD_PIXELINDEX ColorIndex;
   _FillRect(pDevice, x0, y, x1, y);
 	//ColorIndex = LCD__GetColorIndex();

@@ -41,5 +41,7 @@
 .\build\drv_lcd_st7735.o: ..\..\include\rtservice.h
 .\build\drv_lcd_st7735.o: ..\..\include\rtm.h
 .\build\drv_lcd_st7735.o: ..\..\include\rtthread.h
+.\build\drv_lcd_st7735.o: ..\..\components\drivers\include\drivers/spi.h
+.\build\drv_lcd_st7735.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 .\build\drv_lcd_st7735.o: ..\..\components\drivers\include\drivers/serial.h
 .\build\drv_lcd_st7735.o: ..\..\include\rthw.h

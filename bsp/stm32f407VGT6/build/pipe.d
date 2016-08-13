@@ -9,4 +9,6 @@
 .\build\pipe.o: ..\..\include\rtm.h
 .\build\pipe.o: ..\..\include\rtthread.h
 .\build\pipe.o: ..\..\components\drivers\include\rtdevice.h
+.\build\pipe.o: ..\..\components\drivers\include\drivers/spi.h
+.\build\pipe.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 .\build\pipe.o: ..\..\components\drivers\include\drivers/serial.h
